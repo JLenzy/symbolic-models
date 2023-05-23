@@ -11,7 +11,7 @@ from evaluate import load as load_metric
 from miditok import MIDILike
 from miditok.constants import CHORD_MAPS
 
-from data import MIDIDataset, DataCollatorGen, preprocess_logits, compute_metrics
+from data_utils import MIDIDataset, DataCollatorGen, preprocess_logits, compute_metrics
 
 # Training setting variables
 MIDI_PATH = "/Users/jlenz/Desktop/Datasets/maestro-mini"

@@ -1,0 +1,42 @@
+{
+    "os": "Darwin-21.6.0-x86_64-i386-64bit",
+    "python": "3.7.16",
+    "heartbeatAt": "2023-05-23T13:16:55.721725",
+    "startedAt": "2023-05-23T13:16:54.991287",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "GPT2.py",
+    "codePath": "GPT2/GPT2.py",
+    "git": {
+        "remote": "https://github.com/JLenzy/symbolic-models.git",
+        "commit": "be5b09113149bbb0bf7a2cd0f444326687626a12"
+    },
+    "email": "julianlenz981@gmail.com",
+    "root": "/Users/jlenz/Desktop/Qosmo/symbolic-models",
+    "host": "Julians-MacBook-Pro.local",
+    "username": "jlenz",
+    "executable": "/Users/jlenz/opt/miniconda3/envs/qosmo/bin/python",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 2600,
+        "min": 2600,
+        "max": 2600
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2600,
+            "min": 2600,
+            "max": 2600
+        }
+    ],
+    "disk": {
+        "total": 465.62699127197266,
+        "used": 21.76294708251953
+    },
+    "memory": {
+        "total": 16.0
+    }
+}

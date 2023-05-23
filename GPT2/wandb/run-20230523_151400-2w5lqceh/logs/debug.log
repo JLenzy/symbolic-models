@@ -1,0 +1,28 @@
+2023-05-23 15:14:00,901 INFO    MainThread:25459 [wandb_setup.py:_flush():76] Current SDK version is 0.15.3
+2023-05-23 15:14:00,901 INFO    MainThread:25459 [wandb_setup.py:_flush():76] Configure stats pid to 25459
+2023-05-23 15:14:00,901 INFO    MainThread:25459 [wandb_setup.py:_flush():76] Loading settings from /Users/jlenz/.config/wandb/settings
+2023-05-23 15:14:00,901 INFO    MainThread:25459 [wandb_setup.py:_flush():76] Loading settings from /Users/jlenz/Desktop/Qosmo/symbolic-models/GPT2/wandb/settings
+2023-05-23 15:14:00,901 WARNING MainThread:25459 [wandb_setup.py:_flush():76] Unknown environment variable: WANDB_LOG_MODEL
+2023-05-23 15:14:00,901 INFO    MainThread:25459 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'project': 'gpt-2'}
+2023-05-23 15:14:00,901 INFO    MainThread:25459 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-05-23 15:14:00,901 INFO    MainThread:25459 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'GPT2/GPT2.py', 'program': 'GPT2.py'}
+2023-05-23 15:14:00,901 INFO    MainThread:25459 [wandb_init.py:_log_setup():507] Logging user logs to /Users/jlenz/Desktop/Qosmo/symbolic-models/GPT2/wandb/run-20230523_151400-2w5lqceh/logs/debug.log
+2023-05-23 15:14:00,902 INFO    MainThread:25459 [wandb_init.py:_log_setup():508] Logging internal logs to /Users/jlenz/Desktop/Qosmo/symbolic-models/GPT2/wandb/run-20230523_151400-2w5lqceh/logs/debug-internal.log
+2023-05-23 15:14:00,902 INFO    MainThread:25459 [wandb_init.py:init():547] calling init triggers
+2023-05-23 15:14:00,902 INFO    MainThread:25459 [wandb_init.py:init():555] wandb.init called with sweep_config: {}
+config: {}
+2023-05-23 15:14:00,902 INFO    MainThread:25459 [wandb_init.py:init():596] starting backend
+2023-05-23 15:14:00,902 INFO    MainThread:25459 [wandb_init.py:init():600] setting up manager
+2023-05-23 15:14:00,912 INFO    MainThread:25459 [backend.py:_multiprocessing_setup():108] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-05-23 15:14:00,920 INFO    MainThread:25459 [wandb_init.py:init():606] backend started and connected
+2023-05-23 15:14:00,937 INFO    MainThread:25459 [wandb_init.py:init():700] updated telemetry
+2023-05-23 15:14:00,977 INFO    MainThread:25459 [wandb_init.py:init():737] communicating run to backend with 60.0 second timeout
+2023-05-23 15:14:01,517 INFO    MainThread:25459 [wandb_run.py:_on_init():2177] communicating current version
+2023-05-23 15:14:01,927 INFO    MainThread:25459 [wandb_run.py:_on_init():2186] got version response 
+2023-05-23 15:14:01,927 INFO    MainThread:25459 [wandb_init.py:init():787] starting run threads in backend
+2023-05-23 15:14:10,905 INFO    MainThread:25459 [wandb_run.py:_console_start():2158] atexit reg
+2023-05-23 15:14:10,905 INFO    MainThread:25459 [wandb_run.py:_redirect():2013] redirect: SettingsConsole.WRAP_RAW
+2023-05-23 15:14:10,907 INFO    MainThread:25459 [wandb_run.py:_redirect():2078] Wrapping output streams.
+2023-05-23 15:14:10,908 INFO    MainThread:25459 [wandb_run.py:_redirect():2103] Redirects installed.
+2023-05-23 15:14:10,909 INFO    MainThread:25459 [wandb_init.py:init():829] run started, returning control to user process
+2023-05-23 15:14:23,363 WARNING MsgRouterThr:25459 [router.py:message_loop():77] message_loop has been closed
