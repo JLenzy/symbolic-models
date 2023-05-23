@@ -3,6 +3,7 @@ import json
 import argparse
 import wandb
 import os
+import shutil
 
 from torchtoolkit.data import create_subsets
 from transformers import GPT2LMHeadModel, GPT2Config, Trainer, TrainingArguments
@@ -55,6 +56,14 @@ if __name__ == "__main__":
     # Creates the tokenizer convert MIDIs to tokens
     print("#---- Tokenizing the data")
     tokens_path = Path('Maestro_tokens_no_bpe')
+
+    # Check if the directory exists
+    if tokens_path.exists() and tokens_path.is_dir():
+        # Remove all files in the directory
+        shutil.rmtree(tokens_path)
+        # Recreate the directory
+        os.makedirs(tokens_path)
+
     tokenizer = MIDILike(pitch_range, beat_res, nb_velocities, additional_tokens, special_tokens=special_tokens)
     midi_paths = list(Path(MIDI_PATH).glob('**/*.mid')) + list(Path(MIDI_PATH).glob('**/*.midi'))
     print(f"Training on {len(midi_paths)} MIDI files.\n")
