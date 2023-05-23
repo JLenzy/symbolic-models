@@ -1,0 +1,19 @@
+#---- Tokenizing the data
+Training on 11 MIDI files.
+
+
+Tokenizing MIDIs (Maestro_tokens_no_bpe):  91%|█████████ | 10/11 [00:05<00:00,  1.51it/s]
+tokenizer parameters saved to tokenizer_params
+Tokenizing MIDIs (Maestro_tokens_no_bpe): 100%|██████████| 11/11 [00:06<00:00,  1.79it/s]
+Loading data: Maestro_tokens_no_bpe: 100%|██████████| 11/11 [00:00<00:00, 188.39it/s]
+#---- Starting Training
+max_steps is given, it will override any value given in num_train_epochs
+***** Running training *****
+  Num examples = 329
+  Num Epochs = 14,286
+  Instantaneous batch size per device = 16
+  Total train batch size (w. parallel, distributed & accumulation) = 48
+  Gradient Accumulation steps = 3
+  Total optimization steps = 100,000
+  Number of trainable parameters = 26,488,320
+Automatic Weights & Biases logging enabled, to disable set os.environ["WANDB_DISABLED"] = "true"

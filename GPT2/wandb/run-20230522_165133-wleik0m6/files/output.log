@@ -1,0 +1,40 @@
+#---- Tokenizing the data
+Training on 11 MIDI files.
+
+
+Tokenizing MIDIs (Maestro_tokens_no_bpe):  91%|█████████ | 10/11 [00:05<00:00,  1.54it/s]
+Tokenizing MIDIs (Maestro_tokens_no_bpe): 100%|██████████| 11/11 [00:06<00:00,  1.81it/s]
+Loading data: Maestro_tokens_no_bpe: 100%|██████████| 11/11 [00:00<00:00, 182.15it/s]
+max_steps is given, it will override any value given in num_train_epochs
+***** Running training *****
+  Num examples = 308
+  Num Epochs = 16,667
+  Instantaneous batch size per device = 16
+  Total train batch size (w. parallel, distributed & accumulation) = 48
+  Gradient Accumulation steps = 3
+  Total optimization steps = 100,000
+  Number of trainable parameters = 26,516,480
+Automatic Weights & Biases logging enabled, to disable set os.environ["WANDB_DISABLED"] = "true"
+  0%|          | 0/100000 [00:00<?, ?it/s]
+
+  0%|          | 0/100000 [00:00<?, ?it/s]`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+
+  0%|          | 2/100000 [02:52<2399:32:42, 86.39s/it]Traceback (most recent call last):
+  File "/Users/jlenz/Desktop/Qosmo/symbolic-models/GPT2/main.py", line 165, in <module>
+    train_result = trainer.train()
+  File "/Users/jlenz/opt/miniconda3/envs/qosmo/lib/python3.7/site-packages/transformers/trainer.py", line 1668, in train
+    ignore_keys_for_eval=ignore_keys_for_eval,
+  File "/Users/jlenz/opt/miniconda3/envs/qosmo/lib/python3.7/site-packages/transformers/trainer.py", line 1940, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/Users/jlenz/opt/miniconda3/envs/qosmo/lib/python3.7/site-packages/transformers/trainer.py", line 2753, in training_step
+    loss.backward()
+  File "/Users/jlenz/opt/miniconda3/envs/qosmo/lib/python3.7/site-packages/torch/_tensor.py", line 489, in backward
+    self, gradient, retain_graph, create_graph, inputs=inputs
+  File "/Users/jlenz/opt/miniconda3/envs/qosmo/lib/python3.7/site-packages/torch/autograd/__init__.py", line 199, in backward
+    allow_unreachable=True, accumulate_grad=True)  # Calls into the C++ engine to run the backward pass
+  File "/Users/jlenz/opt/miniconda3/envs/qosmo/lib/python3.7/site-packages/torch/autograd/function.py", line 267, in apply
+    return user_fn(self, *args)
+  File "/Users/jlenz/opt/miniconda3/envs/qosmo/lib/python3.7/site-packages/torch/utils/checkpoint.py", line 157, in backward
+    torch.autograd.backward(outputs_with_grad, args_with_grad)
+  File "/Users/jlenz/opt/miniconda3/envs/qosmo/lib/python3.7/site-packages/torch/autograd/__init__.py", line 199, in backward
+    allow_unreachable=True, accumulate_grad=True)  # Calls into the C++ engine to run the backward pass
