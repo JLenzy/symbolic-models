@@ -80,22 +80,4 @@ class DataCollatorGen(DataCollatorMixin):
         x, y = _pad_batch(batch, self.pad_token), _pad_batch(batch, -100)
         return {"input_ids": x, "labels": y}  # will be shifted in GPT2LMHead forward
 
-def compute_metrics(eval_pred):
-    """Computes metrics for pretraining.
-    Must use proprocess_logits function that converts logits to predictions (argmax or sampling).
 
-    :param eval_pred: EvalPrediction containing predictions and labels
-    :return: metrics
-    """
-    predictions, labels = eval_pred
-    not_pad_mask = labels != -100
-    labels, predictions = labels[not_pad_mask], predictions[not_pad_mask]
-    return metrics["accuracy"].compute(predictions=predictions.flatten(), references=labels.flatten())
-
-
-def preprocess_logits(logits: Tensor, _: Tensor) -> Tensor:
-    """Preprocesses the logits before accumulating them during evaluation.
-    This allows to significantly reduce the memory usage and make the training tractable.
-    """
-    pred_ids = argmax(logits, dim=-1)  # long dtype
-    return pred_ids

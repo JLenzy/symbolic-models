@@ -5,6 +5,7 @@ import wandb
 import os
 import shutil
 
+from torch import Tensor, argmax
 from torchtoolkit.data import create_subsets
 from transformers import GPT2LMHeadModel, GPT2Config, Trainer, TrainingArguments
 
@@ -12,7 +13,7 @@ from evaluate import load as load_metric
 from miditok import MIDILike
 from miditok.constants import CHORD_MAPS
 
-from data import MIDIDataset, DataCollatorGen, preprocess_logits, compute_metrics
+from data import MIDIDataset, DataCollatorGen
 
 # Training setting variables
 
@@ -105,6 +106,27 @@ if __name__ == "__main__":
 
     # Train
     metrics = {metric: load_metric(metric) for metric in ["accuracy"]}
+
+
+    def compute_metrics(eval_pred):
+        """Computes metrics for pretraining.
+        Must use proprocess_logits function that converts logits to predictions (argmax or sampling).
+
+        :param eval_pred: EvalPrediction containing predictions and labels
+        :return: metrics
+        """
+        predictions, labels = eval_pred
+        not_pad_mask = labels != -100
+        labels, predictions = labels[not_pad_mask], predictions[not_pad_mask]
+        return metrics["accuracy"].compute(predictions=predictions.flatten(), references=labels.flatten())
+
+
+    def preprocess_logits(logits: Tensor, _: Tensor) -> Tensor:
+        """Preprocesses the logits before accumulating them during evaluation.
+        This allows to significantly reduce the memory usage and make the training tractable.
+        """
+        pred_ids = argmax(logits, dim=-1)  # long dtype
+        return pred_ids
 
     training_config = TrainingArguments(
         "runs", False, True, True, False, "steps",
