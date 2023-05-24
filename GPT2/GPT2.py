@@ -47,7 +47,9 @@ if __name__ == "__main__":
         eos_token_id=vocab['EOS_None'],
     )
     print("#---- Loading the Model")
+    print(f"Vocab size: {len(vocab)}")
     model = GPT2LMHeadModel(config)
+    model.save_pretrained(save_directory="/Users/jlenz/Desktop/Qosmo/symbolic-models/GPT2/runs")
 
     # Train
     metrics = {metric: load_metric(metric) for metric in ["accuracy"]}
