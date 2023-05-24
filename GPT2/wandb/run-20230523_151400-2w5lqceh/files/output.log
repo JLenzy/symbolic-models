@@ -1,6 +1,0 @@
-Loading data: Maestro_tokens_no_bpe: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 11/11 [00:00<00:00, 240.23it/s]
-Traceback (most recent call last):
-  File "GPT2.py", line 51, in <module>
-    padding_token_id=tokenizer['PAD_None'],
-NameError: name 'tokenizer' is not defined
-275
